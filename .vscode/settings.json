@@ -1,0 +1,11 @@
+{
+    "github.codespaces.defaultExtensions": [
+        "GitHub.codespaces",
+        "GitHub.vscode-pull-request-github",
+        "Github.copilot"
+    ],
+    "markdown-preview-github-styles.lightTheme": "light_high_contrast",
+    "markdown-preview-github-styles.darkTheme": "dark_colorblind",
+    "chat.agent.maxRequests": 170,
+    "chat.fontSize": 14
+}

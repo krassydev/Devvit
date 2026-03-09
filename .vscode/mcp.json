@@ -1,0 +1,41 @@
+{
+	"inputs": [],
+	"servers": {
+		"markitdown": {
+			"type": "stdio",
+			"command": "C:\\Users\\jared\\.mcp\\bin\\markitdown.cmd"
+		},
+		"context7": {
+			"type": "stdio",
+			"command": "C:\\Users\\jared\\.mcp\\bin\\context7.cmd"
+		},
+		"playwright": {
+			"type": "stdio",
+			"command": "C:\\Users\\jared\\.mcp\\bin\\playwright.cmd"
+		},
+		"tavily": {
+			"type": "stdio",
+			"command": "C:\\Users\\jared\\.mcp\\bin\\tavily.cmd"
+		},
+		"firecrawl": {
+			"type": "stdio",
+			"command": "C:\\Users\\jared\\.mcp\\bin\\firecrawl.cmd"
+		},
+		"chrome-devtools": {
+			"type": "stdio",
+			"command": "C:\\Users\\jared\\.mcp\\bin\\chrome-devtools.cmd"
+		},
+		"supabase": {
+			"type": "stdio",
+			"command": "C:\\Users\\jared\\.mcp\\bin\\supabase.cmd"
+		},
+		"neon": {
+			"type": "http",
+			"url": "https://mcp.neon.tech/sse"
+		},
+		"huggingface": {
+			"type": "http",
+			"url": "https://huggingface.co/mcp?login"
+		}
+	}
+}

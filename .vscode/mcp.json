@@ -1,172 +1,41 @@
 {
-	"inputs": [
-		{
-			"id": "CONTEXT7_API_KEY",
-			"type": "promptString",
-			"description": "API key for authentication",
-			"password": true
-		},
-		{
-			"id": "TAVILY_API_KEY",
-			"type": "promptString",
-			"description": "Your Tavily API key from tavily.com",
-			"password": true
-		},
-		{
-			"id": "DEFAULT_PARAMETERS",
-			"type": "promptString",
-			"description": "JSON string with default search parameters (e.g., {\"include_images\": true, \"max_results\": 15})",
-			"password": false
-		},
-		{
-			"id": "NETDATA_CLOUD_API_TOKEN",
-			"type": "promptString",
-			"description": "Netdata Cloud API token (create at app.netdata.cloud > User Settings > API Tokens with scope:mcp)",
-			"password": true
-		},
-		{
-			"id": "api_key",
-			"type": "promptString",
-			"description": "your API key",
-			"password": true
-		},
-		{
-			"id": "project-ref",
-			"type": "promptString",
-			"description": "Supabase project reference ID",
-			"password": false
-		},
-		{
-			"id": "read-only",
-			"type": "promptString",
-			"description": "Enable read-only mode",
-			"password": false
-		},
-		{
-			"id": "features",
-			"type": "promptString",
-			"description": "Comma-separated list of features to enable",
-			"password": false
-		},
-		{
-			"id": "api-url",
-			"type": "promptString",
-			"description": "Custom API URL",
-			"password": false
-		},
-		{
-			"id": "SUPABASE_ACCESS_TOKEN",
-			"type": "promptString",
-			"description": "Personal access token for Supabase API",
-			"password": true
-		}
-	],
+	"inputs": [],
 	"servers": {
-		"microsoft/markitdown": {
+		"markitdown": {
 			"type": "stdio",
-			"command": "uvx.exe",
-			"args": [
-				"markitdown-mcp@0.0.1a4"
-			],
-			"gallery": "https://api.mcp.github.com",
-			"version": "1.0.0"
+			"command": "C:\\Users\\jared\\.mcp\\bin\\markitdown.cmd"
 		},
-		"io.github.upstash/context7": {
+		"context7": {
 			"type": "stdio",
-			"command": "npx.cmd",
-			"args": [
-				"-y",
-				"@upstash/context7-mcp@1.0.31"
-			],
-			"env": {
-				"CONTEXT7_API_KEY": "${input:CONTEXT7_API_KEY}"
-			},
-			"gallery": "https://api.mcp.github.com",
-			"version": "1.0.31"
+			"command": "C:\\Users\\jared\\.mcp\\bin\\context7.cmd"
 		},
-		"microsoft/playwright-mcp": {
+		"playwright": {
 			"type": "stdio",
-			"command": "npx.cmd",
-			"args": [
-				"-y",
-				"@playwright/mcp@latest"
-			],
-			"gallery": "https://api.mcp.github.com",
-			"version": "0.0.1-seed"
+			"command": "C:\\Users\\jared\\.mcp\\bin\\playwright.cmd"
 		},
-		"io.github.tavily-ai/tavily-mcp": {
+		"tavily": {
 			"type": "stdio",
-			"command": "npx.cmd",
-			"args": [
-				"-y",
-				"tavily-mcp@0.2.15"
-			],
-			"env": {
-				"TAVILY_API_KEY": "${input:TAVILY_API_KEY}",
-				"DEFAULT_PARAMETERS": "${input:DEFAULT_PARAMETERS}"
-			},
-			"gallery": "https://api.mcp.github.com",
-			"version": "0.2.15"
+			"command": "C:\\Users\\jared\\.mcp\\bin\\tavily.cmd"
 		},
-		"firecrawl/firecrawl-mcp-server": {
+		"firecrawl": {
 			"type": "stdio",
-			"command": "npx.cmd",
-			"args": [
-				"-y",
-				"firecrawl-mcp@latest"
-			],
-			"env": {
-				"FIRECRAWL_API_KEY": "${input:api_key}"
-			},
-			"gallery": "https://api.mcp.github.com",
-			"version": "1.0.0"
+			"command": "C:\\Users\\jared\\.mcp\\bin\\firecrawl.cmd"
 		},
-		"io.github.ChromeDevTools/chrome-devtools-mcp": {
+		"chrome-devtools": {
 			"type": "stdio",
-			"command": "npx.cmd",
-			"args": [
-				"-y",
-				"--registry",
-				"https://registry.npmjs.org",
-				"chrome-devtools-mcp@0.19.0"
-			],
-			"gallery": "https://api.mcp.github.com",
-			"version": "0.19.0"
+			"command": "C:\\Users\\jared\\.mcp\\bin\\chrome-devtools.cmd"
 		},
-		"com.supabase/mcp": {
+		"supabase": {
 			"type": "stdio",
-			"command": "npx.cmd",
-			"args": [
-				"-y",
-				"--registry",
-				"https://registry.npmjs.org",
-				"@supabase/mcp-server-supabase@0.7.0",
-				"--project-ref",
-				"${input:project-ref}",
-				"--read-only",
-				"${input:read-only}",
-				"--features",
-				"${input:features}",
-				"--api-url",
-				"${input:api-url}"
-			],
-			"env": {
-				"SUPABASE_ACCESS_TOKEN": "${input:SUPABASE_ACCESS_TOKEN}"
-			},
-			"gallery": "https://api.mcp.github.com",
-			"version": "0.7.0"
+			"command": "C:\\Users\\jared\\.mcp\\bin\\supabase.cmd"
 		},
-		"neondatabase/mcp-server-neon": {
+		"neon": {
 			"type": "http",
-			"url": "https://mcp.neon.tech/sse",
-			"gallery": "https://api.mcp.github.com",
-			"version": "1.0.0"
+			"url": "https://mcp.neon.tech/sse"
 		},
-		"huggingface/hf-mcp-server": {
+		"huggingface": {
 			"type": "http",
-			"url": "https://huggingface.co/mcp?login",
-			"gallery": "https://api.mcp.github.com",
-			"version": "1.0.0"
+			"url": "https://huggingface.co/mcp?login"
 		}
 	}
 }
